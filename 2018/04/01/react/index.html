@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>React全家桶+AntD 共享单车后台管理系统开发 | mawencai</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="React+React-Router+Redux+AntD+Echarts 第一章 React介绍：第一节：React基本介绍 Facebook 开源的一个JavaScript库 React结合生态库构成一个MV*框架 只关注视图View层+数据层Model 生态介绍 Vue生态：Vue+Vue-Router+Vuex+Axios+Babel+Webpack React生态：React+React">
+<meta name="keywords" content="mawencai,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React全家桶+AntD 共享单车后台管理系统开发">
+<meta property="og:url" content="http://yoursite.com/2018/04/01/react/index.html">
+<meta property="og:site_name" content="mawencai">
+<meta property="og:description" content="React+React-Router+Redux+AntD+Echarts 第一章 React介绍：第一节：React基本介绍 Facebook 开源的一个JavaScript库 React结合生态库构成一个MV*框架 只关注视图View层+数据层Model 生态介绍 Vue生态：Vue+Vue-Router+Vuex+Axios+Babel+Webpack React生态：React+React">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-02T05:55:26.709Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React全家桶+AntD 共享单车后台管理系统开发">
+<meta name="twitter:description" content="React+React-Router+Redux+AntD+Echarts 第一章 React介绍：第一节：React基本介绍 Facebook 开源的一个JavaScript库 React结合生态库构成一个MV*框架 只关注视图View层+数据层Model 生态介绍 Vue生态：Vue+Vue-Router+Vuex+Axios+Babel+Webpack React生态：React+React">
+
+  
+
+  
+    <link rel="icon" href="/images/avatar.jpg">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-React介绍："><span class="toc-text">第一章 React介绍：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一节：React基本介绍"><span class="toc-text">第一节：React基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二节：React脚手架、Yarn介绍"><span class="toc-text">第二节：React脚手架、Yarn介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三节：React生命周期介绍"><span class="toc-text">第三节：React生命周期介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-项目主页工程搭建："><span class="toc-text">第二章 项目主页工程搭建：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一节：基础插件安装，Less文件加载配置"><span class="toc-text">第一节：基础插件安装，Less文件加载配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二节：项目主页结构开发"><span class="toc-text">第二节：项目主页结构开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三节：菜单组件开发"><span class="toc-text">第三节：菜单组件开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四节：头部组件开发"><span class="toc-text">第四节：头部组件开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五节：底部组件开发"><span class="toc-text">第五节：底部组件开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章-Router-4-0路由："><span class="toc-text">第三章 Router 4.0路由：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一节：React-Router-4-0基本概念介绍"><span class="toc-text">第一节：React Router 4.0基本概念介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二节：React-Router-4-0-Demo-介绍"><span class="toc-text">第二节：React Router 4.0 Demo 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三节：项目路由实战开发"><span class="toc-text">第三节：项目路由实战开发</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四章-AntD-UI组件"><span class="toc-text">第四章 AntD UI组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一节：Button组件使用讲解"><span class="toc-text">第一节：Button组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二节：Modal组件使用讲解"><span class="toc-text">第二节：Modal组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三节：Loading组件使用讲解"><span class="toc-text">第三节：Loading组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四节：Notice组件使用讲解"><span class="toc-text">第四节：Notice组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第五节：Message组件使用讲解"><span class="toc-text">第五节：Message组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第六节：Tab组件使用讲解"><span class="toc-text">第六节：Tab组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第七节：Gallery组件使用讲解"><span class="toc-text">第七节：Gallery组件使用讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第八节：Carousel组件使用讲解"><span class="toc-text">第八节：Carousel组件使用讲解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五章-AntD-Form基础组件"><span class="toc-text">第五章 AntD Form基础组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一节：使用Form组件开发登录页面"><span class="toc-text">第一节：使用Form组件开发登录页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二节：使用Form组件开发注册页面"><span class="toc-text">第二节：使用Form组件开发注册页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六章-基础表格、高级表格使用"><span class="toc-text">第六章 基础表格、高级表格使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一节：基础表格用法"><span class="toc-text">第一节：基础表格用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二节：项目工程化-Table动态渲染"><span class="toc-text">第二节：项目工程化-Table动态渲染</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七章-项目工程化"><span class="toc-text">第七章 项目工程化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八章-地图模块"><span class="toc-text">第八章 地图模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第九章-图表模块inst"><span class="toc-text">第九章 图表模块inst</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十章-权限设置模块"><span class="toc-text">第十章 权限设置模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十一章-Redux集成开发"><span class="toc-text">第十一章 Redux集成开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rreact-Native-常见错误总结"><span class="toc-text">Rreact Native 常见错误总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题1-Uncaught-TypeError-Super-expression-must-either-be-null-or-a-function-not-undefined"><span class="toc-text">问题1:Uncaught TypeError: Super expression must either be null or a function, not undefined</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#问题2"><span class="toc-text">问题2:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#问题3"><span class="toc-text">问题3:</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-react" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">React全家桶+AntD 共享单车后台管理系统开发</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.04.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Ma Wencai</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2018/04/01/react/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>React+React-Router+Redux+AntD+Echarts</p>
+<h2 id="第一章-React介绍："><a href="#第一章-React介绍：" class="headerlink" title="第一章 React介绍："></a>第一章 React介绍：</h2><h3 id="第一节：React基本介绍"><a href="#第一节：React基本介绍" class="headerlink" title="第一节：React基本介绍"></a>第一节：React基本介绍</h3><ul>
+<li>Facebook 开源的一个JavaScript库</li>
+<li>React结合生态库构成一个MV*框架<ul>
+<li>只关注视图View层+数据层Model</li>
+<li>生态介绍<ul>
+<li>Vue生态：Vue+Vue-Router+Vuex+Axios+Babel+Webpack</li>
+<li>React生态：React+React-Router+Redux+Axios+Babel+Webpack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>React特点<ul>
+<li>Declarative(声明式编码）<ul>
+<li>编程式实现<ul>
+<li>需要以具体代码表达在哪里（where）做什么（what），如何实现（how）</li>
+</ul>
+</li>
+<li>声明式实现<ul>
+<li>只需要声明在哪里（vhere）做什么（what），而无需关心如何实现（how）m</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Component-Based(组件化编码)</li>
+<li>高效-高效的DOM Diff算法，最小化页面重绘</li>
+<li>单向数据流</li>
+</ul>
+</li>
+</ul>
+<h3 id="第二节：React脚手架、Yarn介绍"><a href="#第二节：React脚手架、Yarn介绍" class="headerlink" title="第二节：React脚手架、Yarn介绍"></a>第二节：React脚手架、Yarn介绍</h3><ul>
+<li>如何安装React脚手架</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">create-react-app my-app</span><br><span class="line"><span class="built_in">cd</span> my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如何使用脚手架初始化项目</li>
+<li>什么是Yarn，为什么要使用Yarn<ul>
+<li>Yarn是新一代包管理工具</li>
+<li>速度快</li>
+<li>安装版本统一、更安全</li>
+<li>更简洁的输出</li>
+<li>更好的语义化</li>
+</ul>
+</li>
+<li>如何使用Yarn<ul>
+<li>yarn init</li>
+<li>yarn add</li>
+<li>yarn remove</li>
+<li>yarn/yarn install</li>
+</ul>
+</li>
+</ul>
+<h3 id="第三节：React生命周期介绍"><a href="#第三节：React生命周期介绍" class="headerlink" title="第三节：React生命周期介绍"></a>第三节：React生命周期介绍</h3><ul>
+<li>React生命周期包含哪些<ul>
+<li>getDefaultProps</li>
+<li>getinitialState</li>
+<li>componentWillMount</li>
+<li>render</li>
+<li>componentDidMount</li>
+<li>componentWillReceiveProps</li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>componentDidUpdate</li>
+<li>componentWillUnmount</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二章-项目主页工程搭建："><a href="#第二章-项目主页工程搭建：" class="headerlink" title="第二章 项目主页工程搭建："></a>第二章 项目主页工程搭建：</h2><h3 id="第一节：基础插件安装，Less文件加载配置"><a href="#第一节：基础插件安装，Less文件加载配置" class="headerlink" title="第一节：基础插件安装，Less文件加载配置"></a>第一节：基础插件安装，Less文件加载配置</h3><ul>
+<li><p>安装所需的插件</p>
+<ul>
+<li><p>安装React-Router、Axios</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add react-router-dom axios less-loader less</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装AntD</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add antd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装babel-plugin-import(按需加载配置:antd官网有说明)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add babel-plugin-import --dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>暴露webpack配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn eject</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装less-loader</p>
+</li>
+<li><p>修改less-loader</p>
+<ul>
+<li>webpack.config.dev.js，webpack.config.prod.js添加</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="built_in">test</span>: /\.less$/,</span><br><span class="line">     use: [</span><br><span class="line">       require.resolve(<span class="string">'style-loader'</span>),</span><br><span class="line">       &#123;</span><br><span class="line">         loader: require.resolve(<span class="string">'css-loader'</span>),</span><br><span class="line">         options: &#123;</span><br><span class="line">           importLoaders: 1,</span><br><span class="line">         &#125;,</span><br><span class="line">       &#125;,</span><br><span class="line">       &#123;</span><br><span class="line">         loader: require.resolve(<span class="string">'postcss-loader'</span>),</span><br><span class="line">         options: &#123;</span><br><span class="line">           // Necessary <span class="keyword">for</span> external CSS imports to work</span><br><span class="line">           // https://github.com/facebookincubator/create-react-app/issues/2677</span><br><span class="line">           ident: <span class="string">'postcss'</span>,</span><br><span class="line">           plugins: () =&gt; [</span><br><span class="line">             require(<span class="string">'postcss-flexbugs-fixes'</span>),</span><br><span class="line">             autoprefixer(&#123;</span><br><span class="line">               browsers: [</span><br><span class="line">                 <span class="string">'&gt;1%'</span>,</span><br><span class="line">                 <span class="string">'last 4 versions'</span>,</span><br><span class="line">                 <span class="string">'Firefox ESR'</span>,</span><br><span class="line">                 <span class="string">'not ie &lt; 9'</span>, // React doesn<span class="string">'t support IE8 anyway</span></span><br><span class="line"><span class="string">               ],</span></span><br><span class="line"><span class="string">               flexbox: '</span>no-2009<span class="string">',</span></span><br><span class="line"><span class="string">             &#125;),</span></span><br><span class="line"><span class="string">           ],</span></span><br><span class="line"><span class="string">         &#125;,</span></span><br><span class="line"><span class="string">       &#125;,</span></span><br><span class="line"><span class="string">       &#123;</span></span><br><span class="line"><span class="string">         loader:require.resolve('</span>less-loader<span class="string">')</span></span><br><span class="line"><span class="string">       &#125;</span></span><br><span class="line"><span class="string">     ],</span></span><br><span class="line"><span class="string">   &#125;,</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="第二节：项目主页结构开发"><a href="#第二节：项目主页结构开发" class="headerlink" title="第二节：项目主页结构开发"></a>第二节：项目主页结构开发</h3><ul>
+<li>主页结构定义<ul>
+<li>页面结构定义</li>
+<li>目录结构定义</li>
+<li>栅格系统使用</li>
+<li>calc计算方法使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="第三节：菜单组件开发"><a href="#第三节：菜单组件开发" class="headerlink" title="第三节：菜单组件开发"></a>第三节：菜单组件开发</h3><h3 id="第四节：头部组件开发"><a href="#第四节：头部组件开发" class="headerlink" title="第四节：头部组件开发"></a>第四节：头部组件开发</h3><h3 id="第五节：底部组件开发"><a href="#第五节：底部组件开发" class="headerlink" title="第五节：底部组件开发"></a>第五节：底部组件开发</h3><h2 id="第三章-Router-4-0路由："><a href="#第三章-Router-4-0路由：" class="headerlink" title="第三章 Router 4.0路由："></a>第三章 Router 4.0路由：</h2><h3 id="第一节：React-Router-4-0基本概念介绍"><a href="#第一节：React-Router-4-0基本概念介绍" class="headerlink" title="第一节：React Router 4.0基本概念介绍"></a>第一节：React Router 4.0基本概念介绍</h3><ul>
+<li>核心概念及用法介绍<ul>
+<li>react-router</li>
+<li>react-router-dom<ul>
+<li>react-router和react-router-dom理解<ul>
+<li>4.0版本中已不需要路由配置，一切皆组件</li>
+<li>react-router：提供一些router的核心api，包括Router，Route，Switch等</li>
+<li>react-router-dom：提供了BrowerRouter，HashRouter，Route，Link，NavLink</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>路由模块安装<ul>
+<li>npm install react-router-dom –save</li>
+<li>yarn add react-router-dom</li>
+</ul>
+</li>
+<li>react-router-dom核心用法<ul>
+<li>HashRouter和BrowerRouter<ul>
+<li><a href="http://localhost:3000/#/admin/button" target="_blank" rel="noopener">http://localhost:3000/#/admin/button</a></li>
+<li><a href="http://localhost:3000/admin/button" target="_blank" rel="noopener">http://localhost:3000/admin/button</a></li>
+</ul>
+</li>
+<li>Route：path、exact、component、render</li>
+<li>NavLink、Link</li>
+<li>Switch</li>
+<li>Redirect</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="第二节：React-Router-4-0-Demo-介绍"><a href="#第二节：React-Router-4-0-Demo-介绍" class="headerlink" title="第二节：React Router 4.0 Demo 介绍"></a>第二节：React Router 4.0 Demo 介绍</h3><h3 id="第三节：项目路由实战开发"><a href="#第三节：项目路由实战开发" class="headerlink" title="第三节：项目路由实战开发"></a>第三节：项目路由实战开发</h3><h2 id="第四章-AntD-UI组件"><a href="#第四章-AntD-UI组件" class="headerlink" title="第四章 AntD UI组件"></a>第四章 AntD UI组件</h2><h3 id="第一节：Button组件使用讲解"><a href="#第一节：Button组件使用讲解" class="headerlink" title="第一节：Button组件使用讲解"></a>第一节：Button组件使用讲解</h3><h3 id="第二节：Modal组件使用讲解"><a href="#第二节：Modal组件使用讲解" class="headerlink" title="第二节：Modal组件使用讲解"></a>第二节：Modal组件使用讲解</h3><h3 id="第三节：Loading组件使用讲解"><a href="#第三节：Loading组件使用讲解" class="headerlink" title="第三节：Loading组件使用讲解"></a>第三节：Loading组件使用讲解</h3><h3 id="第四节：Notice组件使用讲解"><a href="#第四节：Notice组件使用讲解" class="headerlink" title="第四节：Notice组件使用讲解"></a>第四节：Notice组件使用讲解</h3><h3 id="第五节：Message组件使用讲解"><a href="#第五节：Message组件使用讲解" class="headerlink" title="第五节：Message组件使用讲解"></a>第五节：Message组件使用讲解</h3><h3 id="第六节：Tab组件使用讲解"><a href="#第六节：Tab组件使用讲解" class="headerlink" title="第六节：Tab组件使用讲解"></a>第六节：Tab组件使用讲解</h3><h3 id="第七节：Gallery组件使用讲解"><a href="#第七节：Gallery组件使用讲解" class="headerlink" title="第七节：Gallery组件使用讲解"></a>第七节：Gallery组件使用讲解</h3><h3 id="第八节：Carousel组件使用讲解"><a href="#第八节：Carousel组件使用讲解" class="headerlink" title="第八节：Carousel组件使用讲解"></a>第八节：Carousel组件使用讲解</h3><h2 id="第五章-AntD-Form基础组件"><a href="#第五章-AntD-Form基础组件" class="headerlink" title="第五章 AntD Form基础组件"></a>第五章 AntD Form基础组件</h2><h3 id="第一节：使用Form组件开发登录页面"><a href="#第一节：使用Form组件开发登录页面" class="headerlink" title="第一节：使用Form组件开发登录页面"></a>第一节：使用Form组件开发登录页面</h3><h3 id="第二节：使用Form组件开发注册页面"><a href="#第二节：使用Form组件开发注册页面" class="headerlink" title="第二节：使用Form组件开发注册页面"></a>第二节：使用Form组件开发注册页面</h3><h2 id="第六章-基础表格、高级表格使用"><a href="#第六章-基础表格、高级表格使用" class="headerlink" title="第六章 基础表格、高级表格使用"></a>第六章 基础表格、高级表格使用</h2><h3 id="第一节：基础表格用法"><a href="#第一节：基础表格用法" class="headerlink" title="第一节：基础表格用法"></a>第一节：基础表格用法</h3><h3 id="第二节：项目工程化-Table动态渲染"><a href="#第二节：项目工程化-Table动态渲染" class="headerlink" title="第二节：项目工程化-Table动态渲染"></a>第二节：项目工程化-Table动态渲染</h3><ul>
+<li>项目工程化-Mock数据</li>
+<li>项目工程化-Axios封装</li>
+<li>项目工程化-Loading处理，错误拦截</li>
+</ul>
+<h2 id="第七章-项目工程化"><a href="#第七章-项目工程化" class="headerlink" title="第七章 项目工程化"></a>第七章 项目工程化</h2><h2 id="第八章-地图模块"><a href="#第八章-地图模块" class="headerlink" title="第八章 地图模块"></a>第八章 地图模块</h2><h2 id="第九章-图表模块inst"><a href="#第九章-图表模块inst" class="headerlink" title="第九章 图表模块inst"></a>第九章 图表模块inst</h2><h2 id="第十章-权限设置模块"><a href="#第十章-权限设置模块" class="headerlink" title="第十章 权限设置模块"></a>第十章 权限设置模块</h2><h2 id="第十一章-Redux集成开发"><a href="#第十一章-Redux集成开发" class="headerlink" title="第十一章 Redux集成开发"></a>第十一章 Redux集成开发</h2><h2 id="Rreact-Native-常见错误总结"><a href="#Rreact-Native-常见错误总结" class="headerlink" title="Rreact Native 常见错误总结"></a>Rreact Native 常见错误总结</h2><h4 id="问题1-Uncaught-TypeError-Super-expression-must-either-be-null-or-a-function-not-undefined"><a href="#问题1-Uncaught-TypeError-Super-expression-must-either-be-null-or-a-function-not-undefined" class="headerlink" title="问题1:Uncaught TypeError: Super expression must either be null or a function, not undefined"></a>问题1:Uncaught TypeError: Super expression must either be null or a function, not undefined</h4><ul>
+<li>单词拼错  Component写成了Compontent</li>
+</ul>
+<h5 id="问题2"><a href="#问题2" class="headerlink" title="问题2:"></a>问题2:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Warning: React.createElement: <span class="built_in">type</span> should not be null, undefined, boolean, or number. It should be a string (<span class="keyword">for</span> DOM elements) or a ReactClass (<span class="keyword">for</span> composite components).</span><br><span class="line"> Uncaught Invariant Violation: Element <span class="built_in">type</span> is invalid: expected a string (<span class="keyword">for</span> built-in components) or a class/<span class="keyword">function</span> (<span class="keyword">for</span> composite components) but got: undefined.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>import { Foot } from ‘./foot.js’  改成了 import Foot from ‘./foot.js’</li>
+</ul>
+<h5 id="问题3"><a href="#问题3" class="headerlink" title="问题3:"></a>问题3:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Failed to compile</span><br><span class="line">./node_modules/antd/lib/button/style/index.less</span><br><span class="line">Module build failed: </span><br><span class="line"></span><br><span class="line">// https://github.com/ant-design/ant-motion/issues/44  </span><br><span class="line">.bezierEasingMixin();</span><br><span class="line">^</span><br><span class="line">Inline JavaScript is not enabled. Is it <span class="built_in">set</span> <span class="keyword">in</span> your options?</span><br><span class="line">      <span class="keyword">in</span> C:\Users\HP\Desktop\react-antD\react-antd\node_modules\antd\lib\style\color\bezierEasing.less (line 110, column 0)</span><br><span class="line">This error occurred during the build time and cannot be dismissed.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>两种方式<ul>
+<li>1.yarn add less@^2.7.3   </li>
+<li>2.打开项目的package.json 找到dependencies下面的less 将其版本改为  “2.7.3”   然后 yarn install   </li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持mawencai</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/01/01/rem/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/07/01/h5/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2018/04/01/react/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
