@@ -15,19 +15,19 @@
     <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="示例 常用API文档定义画布的基本属性| 画布初始位置 | initialContentAlignment: go.Spot.Center || 禁止移动节点 | allowMove:false || 禁止复制 | allowCopy: false || 禁止删除 | allowDelete:false || 禁止选中 | allowSelect:false || 禁止缩放 | allowZoom">
+  <meta name="description" content="示例 常用API文档定义画布的基本属性   属性 描述 属性值(NaN为自适应，其他值为举例)     initialContentAlignment 画布初始位置 go.Spot.Center   allowMove 禁止移动节点 false   allowCopy 禁止复制 false   allowDelete 禁止删除 false   allowSelect 禁止选中 false   al">
 <meta name="keywords" content="mawencai,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gojs在vue中使用">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/gojs/index.html">
 <meta property="og:site_name" content="mawencai">
-<meta property="og:description" content="示例 常用API文档定义画布的基本属性| 画布初始位置 | initialContentAlignment: go.Spot.Center || 禁止移动节点 | allowMove:false || 禁止复制 | allowCopy: false || 禁止删除 | allowDelete:false || 禁止选中 | allowSelect:false || 禁止缩放 | allowZoom">
+<meta property="og:description" content="示例 常用API文档定义画布的基本属性   属性 描述 属性值(NaN为自适应，其他值为举例)     initialContentAlignment 画布初始位置 go.Spot.Center   allowMove 禁止移动节点 false   allowCopy 禁止复制 false   allowDelete 禁止删除 false   allowSelect 禁止选中 false   al">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/.com//gojsDemo.png">
-<meta property="og:updated_time" content="2020-04-02T07:11:40.134Z">
+<meta property="og:updated_time" content="2020-04-02T08:05:41.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gojs在vue中使用">
-<meta name="twitter:description" content="示例 常用API文档定义画布的基本属性| 画布初始位置 | initialContentAlignment: go.Spot.Center || 禁止移动节点 | allowMove:false || 禁止复制 | allowCopy: false || 禁止删除 | allowDelete:false || 禁止选中 | allowSelect:false || 禁止缩放 | allowZoom">
+<meta name="twitter:description" content="示例 常用API文档定义画布的基本属性   属性 描述 属性值(NaN为自适应，其他值为举例)     initialContentAlignment 画布初始位置 go.Spot.Center   allowMove 禁止移动节点 false   allowCopy 禁止复制 false   allowDelete 禁止删除 false   allowSelect 禁止选中 false   al">
 <meta name="twitter:image" content="http://yoursite.com/.com//gojsDemo.png">
 
   
@@ -176,7 +176,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用API文档"><span class="toc-text">常用API文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义画布的基本属性"><span class="toc-text">定义画布的基本属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义DOM"><span class="toc-text">定义DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS"><span class="toc-text">JS</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用API文档"><span class="toc-text">常用API文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义画布的基本属性"><span class="toc-text">定义画布的基本属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节点定义"><span class="toc-text">节点定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公用属性"><span class="toc-text">公用属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#所有节点块定义都能通用的属性"><span class="toc-text">所有节点块定义都能通用的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-Part-部分属性"><span class="toc-text">go.Part 部分属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-Panels-面板元素"><span class="toc-text">go.Panels(面板元素)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-TextBlock-文本框元素"><span class="toc-text">go.TextBlock(文本框元素)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中应用"><span class="toc-text">项目中应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义DOM"><span class="toc-text">定义DOM</span></a></li></ol></li></ol>
   </div>
 
 
@@ -222,10 +222,249 @@
 
   <div class="article-content">
     
-      <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><img src="/.com//gojsDemo.png" alt="gojsDemo"></p>
-<h3 id="常用API文档"><a href="#常用API文档" class="headerlink" title="常用API文档"></a>常用API文档</h3><h4 id="定义画布的基本属性"><a href="#定义画布的基本属性" class="headerlink" title="定义画布的基本属性"></a>定义画布的基本属性</h4><p>| 画布初始位置 | initialContentAlignment: go.Spot.Center |<br>| 禁止移动节点 | allowMove:false |<br>| 禁止复制 | allowCopy: false |<br>| 禁止删除 | allowDelete:false |<br>| 禁止选中 | allowSelect:false |<br>| 禁止缩放 | allowZoom: false |<br>| 禁止水平滚动条 | allowHorizontalScroll: false |<br>| 禁止垂直滚动条 | allowVerticalScroll: false |<br>| 只读 | isReadOnly: true |<br>| 画布边距padding Margin | padding:80或者new go.Margin(2, 0)或new go.Margin(1, 0, 0, 1) |</p>
-<h3 id="定义DOM"><a href="#定义DOM" class="headerlink" title="定义DOM"></a>定义DOM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiagramDiv"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3>
+      <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="/.com//gojsDemo.png" alt="gojsDemo"></p>
+<h2 id="常用API文档"><a href="#常用API文档" class="headerlink" title="常用API文档"></a>常用API文档</h2><h3 id="定义画布的基本属性"><a href="#定义画布的基本属性" class="headerlink" title="定义画布的基本属性"></a>定义画布的基本属性</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:right">描述</th>
+<th style="text-align:center">属性值(NaN为自适应，其他值为举例)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">initialContentAlignment</td>
+<td style="text-align:right">画布初始位置</td>
+<td style="text-align:center">go.Spot.Center</td>
+</tr>
+<tr>
+<td style="text-align:left">allowMove</td>
+<td style="text-align:right">禁止移动节点</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">allowCopy</td>
+<td style="text-align:right">禁止复制</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">allowDelete</td>
+<td style="text-align:right">禁止删除</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">allowSelect</td>
+<td style="text-align:right">禁止选中</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">allowZoom</td>
+<td style="text-align:right">禁止缩放</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">allowHorizontalScroll</td>
+<td style="text-align:right">禁止水平滚动条</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">allowVerticalScroll</td>
+<td style="text-align:right">禁止垂直滚动条</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:left">isReadOnly</td>
+<td style="text-align:right">只读</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:left">padding</td>
+<td style="text-align:right">画布边距padding</td>
+<td style="text-align:center">padding:80</td>
+</tr>
+<tr>
+<td style="text-align:left">margin</td>
+<td style="text-align:right">画布边距Margin</td>
+<td style="text-align:center">new go.Margin(2, 0)或new go.Margin(1, 0, 0, 1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="节点定义"><a href="#节点定义" class="headerlink" title="节点定义"></a>节点定义</h3><p><a href="https://blog.csdn.net/qq_29287561/article/details/103038140" target="_blank" rel="noopener">node中文文档入口</a></p>
+<h3 id="公用属性"><a href="#公用属性" class="headerlink" title="公用属性"></a>公用属性</h3><h4 id="所有节点块定义都能通用的属性"><a href="#所有节点块定义都能通用的属性" class="headerlink" title="所有节点块定义都能通用的属性"></a>所有节点块定义都能通用的属性</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:right">描述</th>
+<th style="text-align:center">属性值(NaN为自适应，其他值为举例)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">minSize</td>
+<td style="text-align:right">最小范围</td>
+<td style="text-align:center">new go.Size(50, NaN)或new go.Size(50, 200)</td>
+</tr>
+<tr>
+<td style="text-align:left">maxSize</td>
+<td style="text-align:right">最大范围</td>
+<td style="text-align:center">同上</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:right">宽</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:right">高</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">margin</td>
+<td style="text-align:right">外边距</td>
+<td style="text-align:center">0或new go.Margin(2, 0)或new go.Margin(1, 0, 0, 1)</td>
+</tr>
+<tr>
+<td style="text-align:left">alignment</td>
+<td style="text-align:right">元素位置</td>
+<td style="text-align:center">go.Spot.BottomLeft 左下 go.Spot.BottomRight 右下 go.Spot.TopLeft 左上 go.Spot.TopRight 右上 go.Spot.Left go.Spot.Right go.Spot.Top go.Spot.Bottom</td>
+</tr>
+<tr>
+<td style="text-align:left">defaultAlignment</td>
+<td style="text-align:right">子元素位置</td>
+<td style="text-align:center">go.Spot.TopRight 右上</td>
+</tr>
+<tr>
+<td style="text-align:left">visible</td>
+<td style="text-align:right">设置是元素是否可见</td>
+<td style="text-align:center">false为不可见</td>
+</tr>
+</tbody>
+</table>
+<h4 id="go-Part-部分属性"><a href="#go-Part-部分属性" class="headerlink" title="go.Part 部分属性"></a>go.Part 部分属性</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:right">描述</th>
+<th style="text-align:center">属性值(NaN为自适应，其他值为举例)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">zOrder:999</td>
+<td style="text-align:right">节点显示层级，越大越上面</td>
+<td style="text-align:center">默认NaN，按创建顺序排序，最先创建的在最底部</td>
+</tr>
+<tr>
+<td style="text-align:left">deletable:false</td>
+<td style="text-align:right">可删除的</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">movable:false</td>
+<td style="text-align:right">可移动的</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">selectable: false</td>
+<td style="text-align:right">可选择的</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">selectionAdorned:false</td>
+<td style="text-align:right">显示选中边框</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">isShadowed:true</td>
+<td style="text-align:right">显示阴影</td>
+<td style="text-align:center">默认false,true</td>
+</tr>
+<tr>
+<td style="text-align:left">shadowColor : “#ffda92”</td>
+<td style="text-align:right">阴影的颜色</td>
+<td style="text-align:center">默认gray</td>
+</tr>
+<tr>
+<td style="text-align:left">shadowOffset:new go.Point(3, 3)</td>
+<td style="text-align:right">阴影的位置偏移</td>
+<td style="text-align:center">默认为new go.Point(6, 6)</td>
+</tr>
+<tr>
+<td style="text-align:left">copyable:false</td>
+<td style="text-align:right">可复制的</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">isSelected:true</td>
+<td style="text-align:right">选中</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+</tbody>
+</table>
+<h4 id="go-Panels-面板元素"><a href="#go-Panels-面板元素" class="headerlink" title="go.Panels(面板元素)"></a>go.Panels(面板元素)</h4><ul>
+<li>定义子元素在面板的的位置</li>
+</ul>
+<p>| Auto | 子元素叠加布局 |<br>| Vertical | 子元素垂直布局 |<br>| Horizontal | 子元素水平布局 |<br>| Spot | 子元素Spot布局 |<br>| Position | 子元素坐标布局 |<br>| Table | 子元素表格布局 |</p>
+<h4 id="go-TextBlock-文本框元素"><a href="#go-TextBlock-文本框元素" class="headerlink" title="go.TextBlock(文本框元素)"></a>go.TextBlock(文本框元素)</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:right">描述</th>
+<th style="text-align:center">属性值(NaN为自适应，其他值为举例)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">stroke</td>
+<td style="text-align:right">文字颜色（边框颜色）</td>
+<td style="text-align:center">“#333333”或”red”</td>
+</tr>
+<tr>
+<td style="text-align:left">font</td>
+<td style="text-align:right">字体</td>
+<td style="text-align:center">“10pt helvetica, arial, sans-serif”</td>
+</tr>
+<tr>
+<td style="text-align:left">editable</td>
+<td style="text-align:right">文本可编辑</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">textAlign</td>
+<td style="text-align:right">文本位置</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">minSize</td>
+<td style="text-align:right">文本域最小范围，设置范围后才能控制换行和裁切</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">maxSize</td>
+<td style="text-align:right">文本域最大范围</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">maxLines</td>
+<td style="text-align:right">文本显示的最大行数</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">isMultiline</td>
+<td style="text-align:right">允许换行</td>
+<td style="text-align:center">默认true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">overflow</td>
+<td style="text-align:right">文本超出范围处理方式,设置文本域范围后该属性才会生效</td>
+<td style="text-align:center">go.TextBlock.OverflowEllipsis 显示缩略号</td>
+</tr>
+</tbody>
+</table>
+<p>go.TextBlock.OverflowClip 裁切 |</p>
+<h2 id="项目中应用"><a href="#项目中应用" class="headerlink" title="项目中应用"></a>项目中应用</h2><h3 id="定义DOM"><a href="#定义DOM" class="headerlink" title="定义DOM"></a>定义DOM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiagramDiv"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
     
   </div>
 
