@@ -24,7 +24,7 @@
 <meta property="og:description" content="示例 常用API文档定义画布的基本属性   属性 描述 属性值(NaN为自适应，其他值为举例)     initialContentAlignment 画布初始位置 go.Spot.Center   allowMove 禁止移动节点 false   allowCopy 禁止复制 false   allowDelete 禁止删除 false   allowSelect 禁止选中 false   al">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/.com//gojsDemo.png">
-<meta property="og:updated_time" content="2020-04-02T08:05:41.664Z">
+<meta property="og:updated_time" content="2020-04-02T08:41:14.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gojs在vue中使用">
 <meta name="twitter:description" content="示例 常用API文档定义画布的基本属性   属性 描述 属性值(NaN为自适应，其他值为举例)     initialContentAlignment 画布初始位置 go.Spot.Center   allowMove 禁止移动节点 false   allowCopy 禁止复制 false   allowDelete 禁止删除 false   allowSelect 禁止选中 false   al">
@@ -176,7 +176,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用API文档"><span class="toc-text">常用API文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义画布的基本属性"><span class="toc-text">定义画布的基本属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节点定义"><span class="toc-text">节点定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公用属性"><span class="toc-text">公用属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#所有节点块定义都能通用的属性"><span class="toc-text">所有节点块定义都能通用的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-Part-部分属性"><span class="toc-text">go.Part 部分属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-Panels-面板元素"><span class="toc-text">go.Panels(面板元素)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-TextBlock-文本框元素"><span class="toc-text">go.TextBlock(文本框元素)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中应用"><span class="toc-text">项目中应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义DOM"><span class="toc-text">定义DOM</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用API文档"><span class="toc-text">常用API文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义画布的基本属性"><span class="toc-text">定义画布的基本属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节点定义"><span class="toc-text">节点定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公用属性"><span class="toc-text">公用属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#所有节点块定义都能通用的属性"><span class="toc-text">所有节点块定义都能通用的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-Part-部分属性"><span class="toc-text">go.Part 部分属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-Panels-面板元素"><span class="toc-text">go.Panels(面板元素)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#go-TextBlock-文本框元素"><span class="toc-text">go.TextBlock(文本框元素)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中应用"><span class="toc-text">项目中应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义DOM"><span class="toc-text">定义DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在main-js中引入gojs"><span class="toc-text">在main.js中引入gojs</span></a></li></ol></li></ol>
   </div>
 
 
@@ -458,12 +458,12 @@
 <tr>
 <td style="text-align:left">overflow</td>
 <td style="text-align:right">文本超出范围处理方式,设置文本域范围后该属性才会生效</td>
-<td style="text-align:center">go.TextBlock.OverflowEllipsis 显示缩略号</td>
+<td style="text-align:center">go.TextBlock.OverflowEllipsis 显示缩略号 go.TextBlock.OverflowClip 裁切</td>
 </tr>
 </tbody>
 </table>
-<p>go.TextBlock.OverflowClip 裁切 |</p>
 <h2 id="项目中应用"><a href="#项目中应用" class="headerlink" title="项目中应用"></a>项目中应用</h2><h3 id="定义DOM"><a href="#定义DOM" class="headerlink" title="定义DOM"></a>定义DOM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiagramDiv"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="在main-js中引入gojs"><a href="#在main-js中引入gojs" class="headerlink" title="在main.js中引入gojs"></a>在main.js中引入gojs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">'../utils/gojs/go-debug'</span></span><br><span class="line">import DoubleTreeLayout  from <span class="string">"../utils/gojs/DoubleTreeLayout.js"</span>;</span><br></pre></td></tr></table></figure>
 
     
   </div>
