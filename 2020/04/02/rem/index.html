@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动端页面自适应解决方案—rem布局 | mawencai</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="设计稿尺寸为750 * 1340。结合网易、淘宝移动端首页html元素上的动态font-size属性、设计稿尺寸、前端与设计之间协作流程一般分为下面两种： 一、网易做法：引入：页面开头处引入下面这段代码，用于动态计算font-size12345678910111213141516171819202122232425(function(doc, win) &amp;#123;    var docEl =">
+<meta name="keywords" content="mawencai,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端页面自适应解决方案—rem布局">
+<meta property="og:url" content="http://yoursite.com/2020/04/02/rem/index.html">
+<meta property="og:site_name" content="mawencai">
+<meta property="og:description" content="设计稿尺寸为750 * 1340。结合网易、淘宝移动端首页html元素上的动态font-size属性、设计稿尺寸、前端与设计之间协作流程一般分为下面两种： 一、网易做法：引入：页面开头处引入下面这段代码，用于动态计算font-size12345678910111213141516171819202122232425(function(doc, win) &amp;#123;    var docEl =">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-17T09:31:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端页面自适应解决方案—rem布局">
+<meta name="twitter:description" content="设计稿尺寸为750 * 1340。结合网易、淘宝移动端首页html元素上的动态font-size属性、设计稿尺寸、前端与设计之间协作流程一般分为下面两种： 一、网易做法：引入：页面开头处引入下面这段代码，用于动态计算font-size12345678910111213141516171819202122232425(function(doc, win) &amp;#123;    var docEl =">
+
+  
+
+  
+    <link rel="icon" href="/images/avatar.jpg">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、网易做法："><span class="toc-text">一、网易做法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引入：页面开头处引入下面这段代码，用于动态计算font-size"><span class="toc-text">引入：页面开头处引入下面这段代码，用于动态计算font-size</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用："><span class="toc-text">使用：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#未引入前："><span class="toc-text">未引入前：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#引入后：除以100并将px换成rem："><span class="toc-text">引入后：除以100并将px换成rem：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、淘宝做法："><span class="toc-text">二、淘宝做法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用：-1"><span class="toc-text">使用：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#未引入前：-1"><span class="toc-text">未引入前：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#引入后：除以100并将px换成rem：-1"><span class="toc-text">引入后：除以100并将px换成rem：</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-rem" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">移动端页面自适应解决方案—rem布局</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2020.04.02</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Ma Wencai</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2020/04/02/rem/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>设计稿尺寸为750 * 1340。结合网易、淘宝移动端首页html元素上的动态font-size属性、设计稿尺寸、前端与设计之间协作流程一般分为下面两种：</p>
+<h3 id="一、网易做法："><a href="#一、网易做法：" class="headerlink" title="一、网易做法："></a>一、网易做法：</h3><h4 id="引入：页面开头处引入下面这段代码，用于动态计算font-size"><a href="#引入：页面开头处引入下面这段代码，用于动态计算font-size" class="headerlink" title="引入：页面开头处引入下面这段代码，用于动态计算font-size"></a>引入：页面开头处引入下面这段代码，用于动态计算font-size</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">doc, win</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> docEl = doc.documentElement,</span><br><span class="line">        isIOS = navigator.userAgent.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>),</span><br><span class="line">        dpr = isIOS ? <span class="built_in">Math</span>.min(win.devicePixelRatio, <span class="number">3</span>) : <span class="number">1</span>,</span><br><span class="line">        dpr = <span class="built_in">window</span>.top === <span class="built_in">window</span>.self ? dpr : <span class="number">1</span>, <span class="comment">//被iframe引用时，禁止缩放</span></span><br><span class="line">        dpr = <span class="number">1</span>,</span><br><span class="line">        scale = <span class="number">1</span> / dpr,</span><br><span class="line">        resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>;</span><br><span class="line">    docEl.dataset.dpr = dpr;</span><br><span class="line">    <span class="keyword">var</span> metaEl = doc.createElement(<span class="string">'meta'</span>);</span><br><span class="line">    metaEl.name = <span class="string">'viewport'</span>;</span><br><span class="line">    metaEl.content = <span class="string">'initial-scale='</span> + scale + <span class="string">',maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale;</span><br><span class="line">    docEl.firstElementChild.appendChild(metaEl);</span><br><span class="line">    <span class="keyword">var</span> recalc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> width = docEl.clientWidth;</span><br><span class="line">        <span class="keyword">if</span> (width / dpr &gt; <span class="number">750</span>) &#123;</span><br><span class="line">            width = <span class="number">750</span> * dpr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 乘以100，px : rem = 100 : 1</span></span><br><span class="line">        docEl.style.fontSize = <span class="number">100</span> * (width / <span class="number">750</span>) + <span class="string">'px'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    recalc()</span><br><span class="line">    <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</span><br><span class="line">    win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</span><br><span class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><h5 id="未引入前："><a href="#未引入前：" class="headerlink" title="未引入前："></a>未引入前：</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">750px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">640px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="引入后：除以100并将px换成rem："><a href="#引入后：除以100并将px换成rem：" class="headerlink" title="引入后：除以100并将px换成rem："></a>引入后：除以100并将px换成rem：</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">7.5rem</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">6.4rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、淘宝做法："><a href="#二、淘宝做法：" class="headerlink" title="二、淘宝做法："></a>二、淘宝做法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">win, lib</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> doc = win.document;</span><br><span class="line">    <span class="keyword">var</span> docEl = doc.documentElement;</span><br><span class="line">    <span class="keyword">var</span> metaEl = doc.querySelector(<span class="string">'meta[name="viewport"]'</span>);</span><br><span class="line">    <span class="keyword">var</span> flexibleEl = doc.querySelector(<span class="string">'meta[name="flexible"]'</span>);</span><br><span class="line">    <span class="keyword">var</span> dpr = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> scale = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> tid;</span><br><span class="line">    <span class="keyword">var</span> flexible = lib.flexible || (lib.flexible = &#123;&#125;);</span><br><span class="line">    <span class="keyword">if</span> (metaEl) &#123;</span><br><span class="line">        <span class="keyword">var</span> match = metaEl.getAttribute(<span class="string">'content'</span>).match(<span class="regexp">/initial\-scale=([\d\.]+)/</span>);</span><br><span class="line">        <span class="keyword">if</span> (match) &#123;</span><br><span class="line">            scale = <span class="built_in">parseFloat</span>(match[<span class="number">1</span>]);</span><br><span class="line">            dpr = <span class="built_in">parseInt</span>(<span class="number">1</span> / scale);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (flexibleEl) &#123;</span><br><span class="line">        <span class="keyword">var</span> content = flexibleEl.getAttribute(<span class="string">'content'</span>);</span><br><span class="line">        <span class="keyword">if</span> (content) &#123;</span><br><span class="line">            <span class="keyword">var</span> initialDpr = content.match(<span class="regexp">/initial\-dpr=([\d\.]+)/</span>);</span><br><span class="line">            <span class="keyword">var</span> maximumDpr = content.match(<span class="regexp">/maximum\-dpr=([\d\.]+)/</span>);</span><br><span class="line">            <span class="keyword">if</span> (initialDpr) &#123;</span><br><span class="line">                dpr = <span class="built_in">parseFloat</span>(initialDpr[<span class="number">1</span>]);</span><br><span class="line">                scale = <span class="built_in">parseFloat</span>((<span class="number">1</span> / dpr).toFixed(<span class="number">2</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (maximumDpr) &#123;</span><br><span class="line">                dpr = <span class="built_in">parseFloat</span>(maximumDpr[<span class="number">1</span>]);</span><br><span class="line">                scale = <span class="built_in">parseFloat</span>((<span class="number">1</span> / dpr).toFixed(<span class="number">2</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!dpr &amp;&amp; !scale) &#123;</span><br><span class="line">        <span class="keyword">var</span> isAndroid = win.navigator.appVersion.match(<span class="regexp">/android/gi</span>);</span><br><span class="line">        <span class="keyword">var</span> isIPhone = win.navigator.appVersion.match(<span class="regexp">/iphone/gi</span>);</span><br><span class="line">        <span class="keyword">var</span> devicePixelRatio = win.devicePixelRatio;</span><br><span class="line">        <span class="keyword">if</span> (isIPhone) &#123;</span><br><span class="line">            <span class="comment">// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</span></span><br><span class="line">            <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">3</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">3</span>)) &#123;</span><br><span class="line">                dpr = <span class="number">3</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">2</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">2</span>)) &#123;</span><br><span class="line">                dpr = <span class="number">2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                dpr = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 其他设备下，仍旧使用1倍的方案</span></span><br><span class="line">            dpr = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        scale = <span class="number">1</span> / dpr;</span><br><span class="line">    &#125;</span><br><span class="line">    docEl.setAttribute(<span class="string">'data-dpr'</span>, dpr);</span><br><span class="line">    <span class="keyword">if</span> (!metaEl) &#123;</span><br><span class="line">        metaEl = doc.createElement(<span class="string">'meta'</span>);</span><br><span class="line">        metaEl.setAttribute(<span class="string">'name'</span>, <span class="string">'viewport'</span>);</span><br><span class="line">        metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">', user-scalable=no'</span>);</span><br><span class="line">        <span class="keyword">if</span> (docEl.firstElementChild) &#123;</span><br><span class="line">            docEl.firstElementChild.appendChild(metaEl);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> wrap = doc.createElement(<span class="string">'div'</span>);</span><br><span class="line">            wrap.appendChild(metaEl);</span><br><span class="line">            doc.write(wrap.innerHTML);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">refreshRem</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> width = docEl.getBoundingClientRect().width;</span><br><span class="line">        <span class="comment">// 适配平板</span></span><br><span class="line">        <span class="keyword">if</span> (width / dpr &gt; <span class="number">540</span>) &#123;</span><br><span class="line">            width = <span class="number">540</span> * dpr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> rem = width / <span class="number">10</span>;</span><br><span class="line">        docEl.style.fontSize = rem + <span class="string">'px'</span>;</span><br><span class="line">        flexible.rem = win.rem = rem;</span><br><span class="line">    &#125;</span><br><span class="line">    win.addEventListener(<span class="string">'resize'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(tid);</span><br><span class="line">        tid = setTimeout(refreshRem, <span class="number">300</span>);</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line">    win.addEventListener(<span class="string">'pageshow'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (e.persisted) &#123;</span><br><span class="line">            clearTimeout(tid);</span><br><span class="line">            tid = setTimeout(refreshRem, <span class="number">300</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">if</span> (doc.readyState === <span class="string">'complete'</span>) &#123;</span><br><span class="line">        doc.body.style.fontSize = <span class="number">12</span> * dpr + <span class="string">'px'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            doc.body.style.fontSize = <span class="number">12</span> * dpr + <span class="string">'px'</span>;</span><br><span class="line">        &#125;, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    refreshRem();</span><br><span class="line">    flexible.dpr = win.dpr = dpr;</span><br><span class="line">    flexible.refreshRem = refreshRem;</span><br><span class="line">    flexible.rem2px = <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> val = <span class="built_in">parseFloat</span>(d) * <span class="keyword">this</span>.rem;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> d === <span class="string">'string'</span> &amp;&amp; d.match(<span class="regexp">/rem$/</span>)) &#123;</span><br><span class="line">            val += <span class="string">'px'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line">    flexible.px2rem = <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> val = <span class="built_in">parseFloat</span>(d) / <span class="keyword">this</span>.rem;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> d === <span class="string">'string'</span> &amp;&amp; d.match(<span class="regexp">/px$/</span>)) &#123;</span><br><span class="line">            val += <span class="string">'rem'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)(<span class="built_in">window</span>, <span class="built_in">window</span>[<span class="string">'lib'</span>] || (<span class="built_in">window</span>[<span class="string">'lib'</span>] = &#123;&#125;));</span><br></pre></td></tr></table></figure>
+<h4 id="使用：-1"><a href="#使用：-1" class="headerlink" title="使用："></a>使用：</h4><h5 id="未引入前：-1"><a href="#未引入前：-1" class="headerlink" title="未引入前："></a>未引入前：</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">750px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">640px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="引入后：除以100并将px换成rem：-1"><a href="#引入后：除以100并将px换成rem：-1" class="headerlink" title="引入后：除以100并将px换成rem："></a>引入后：除以100并将px换成rem：</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@font-size-base: 75;</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">750rem</span>/@font-size-base;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">640rem</span>/@font-size-base;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持mawencai</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2020/04/02/react/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2020/04/02/rem/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
