@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端微服务（中） | mawencai</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="single-spasingle-spa-vue single-spa-vue 是提供给使用vue子项目使用的npm包。他可以快速和sigle-spa父项目集成，并提供了一些比较便携的api。用于 子项目 使用  新建导航主项目 vue-cli4直接使用vue create parent命令生成一个vue项目。   需要注意的是，导航项目路由必须用 history 模式   npm install">
+<meta name="keywords" content="mawencai,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端微服务（中）">
+<meta property="og:url" content="http://yoursite.com/2020/04/23/前端微服务（中）/index.html">
+<meta property="og:site_name" content="mawencai">
+<meta property="og:description" content="single-spasingle-spa-vue single-spa-vue 是提供给使用vue子项目使用的npm包。他可以快速和sigle-spa父项目集成，并提供了一些比较便携的api。用于 子项目 使用  新建导航主项目 vue-cli4直接使用vue create parent命令生成一个vue项目。   需要注意的是，导航项目路由必须用 history 模式   npm install">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-23T06:37:22.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端微服务（中）">
+<meta name="twitter:description" content="single-spasingle-spa-vue single-spa-vue 是提供给使用vue子项目使用的npm包。他可以快速和sigle-spa父项目集成，并提供了一些比较便携的api。用于 子项目 使用  新建导航主项目 vue-cli4直接使用vue create parent命令生成一个vue项目。   需要注意的是，导航项目路由必须用 history 模式   npm install">
+
+  
+
+  
+    <link rel="icon" href="/images/avatar.jpg">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#single-spa"><span class="toc-text">single-spa</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#single-spa-vue"><span class="toc-text">single-spa-vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建导航主项目"><span class="toc-text">新建导航主项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册vue子项目"><span class="toc-text">注册vue子项目</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样式隔离-postcss-selector-namespace"><span class="toc-text">样式隔离 postcss-selector-namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#独立运行"><span class="toc-text">独立运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐文章"><span class="toc-text">推荐文章</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-前端微服务（中）" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">前端微服务（中）</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2020.04.23</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Ma Wencai</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2020/04/23/前端微服务（中）/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="single-spa"><a href="#single-spa" class="headerlink" title="single-spa"></a>single-spa</h2><h3 id="single-spa-vue"><a href="#single-spa-vue" class="headerlink" title="single-spa-vue"></a>single-spa-vue</h3><blockquote>
+<p>single-spa-vue 是提供给使用vue子项目使用的npm包。他可以快速和sigle-spa父项目集成，并提供了一些比较便携的api。用于 子项目 使用</p>
+</blockquote>
+<h4 id="新建导航主项目"><a href="#新建导航主项目" class="headerlink" title="新建导航主项目"></a>新建导航主项目</h4><ul>
+<li>vue-cli4直接使用vue create parent命令生成一个vue项目。</li>
+</ul>
+<blockquote>
+<p>需要注意的是，导航项目路由必须用 history 模式</p>
+</blockquote>
+<ul>
+<li>npm install ant-design-vue single-spa –save -d</li>
+<li>我们注册一个子服务路由，只是注册， 不填写component字段</li>
+<li>src目录下新建文件single-spa-config.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import * as singleSpa from <span class="string">"single-spa"</span>; //导入single-spa</span><br><span class="line">/*</span><br><span class="line"> * runScript：一个promise同步方法。可以代替创建一个script标签，然后加载服务</span><br><span class="line"> * */</span><br><span class="line">const runScript = async url =&gt; &#123;</span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    const script = document.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.src = url;</span><br><span class="line">    script.onload = resolve;</span><br><span class="line">    script.onerror = reject;</span><br><span class="line">    const firstScript = document.getElementsByTagName(<span class="string">"script"</span>)[0];</span><br><span class="line">    firstScript.parentNode.insertBefore(script, firstScript);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">/*</span><br><span class="line"> * registerApplication：注册子项目的方法</span><br><span class="line"> * 参数：appName:子项目名称  </span><br><span class="line"> * applicationOrLoadingFn:子项目注册函数，用户需要返回 single-spa 的生命周期对象</span><br><span class="line"> * activityFn: 回调函数入参 location 对象，可以写自定义匹配路由加载规则。</span><br><span class="line"> * */</span><br><span class="line"></span><br><span class="line">singleSpa.registerApplication(</span><br><span class="line">  <span class="string">"singleDemo"</span>,</span><br><span class="line">  async () =&gt; &#123;</span><br><span class="line">    await runScript(<span class="string">"http://127.0.0.1:3000/js/chunk-vendors.js"</span>);</span><br><span class="line">    await runScript(<span class="string">"http://127.0.0.1:3000/js/app.js"</span>);</span><br><span class="line">    <span class="built_in">return</span> window.singleVue;</span><br><span class="line">  &#125;,</span><br><span class="line">  location =&gt; location.pathname.startsWith(<span class="string">"/vue"</span>) // 配置微前端模块前缀</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">// 启动函数</span><br><span class="line">singleSpa.start();</span><br></pre></td></tr></table></figure>
+<h4 id="注册vue子项目"><a href="#注册vue子项目" class="headerlink" title="注册vue子项目"></a>注册vue子项目</h4><ul>
+<li>vue-cli4直接使用vue create vue-child命令生成一个vue项目。</li>
+<li>npm install single-spa-vue –save -d</li>
+<li>main.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import singleSpaVue from <span class="string">"single-spa-vue"</span>;</span><br><span class="line">import Vue from <span class="string">'vue'</span></span><br><span class="line">const vueOptions = &#123;</span><br><span class="line">    el: <span class="string">"#vue"</span>,</span><br><span class="line">    router,</span><br><span class="line">    store,</span><br><span class="line">    render: h =&gt; h(App)</span><br><span class="line">&#125;;</span><br><span class="line">// singleSpaVue包装一个vue微前端服务对象</span><br><span class="line">const vueLifecycles = singleSpaVue(&#123;</span><br><span class="line">    Vue,</span><br><span class="line">    appOptions: vueOptions</span><br><span class="line">&#125;);</span><br><span class="line">// 导出生命周期对象</span><br><span class="line"><span class="built_in">export</span> const bootstrap = vueLifecycles.bootstrap; // 启动时</span><br><span class="line"><span class="built_in">export</span> const mount = vueLifecycles.mount; // 挂载时</span><br><span class="line"><span class="built_in">export</span> const unmount = vueLifecycles.unmount; // 卸载时</span><br><span class="line"><span class="built_in">export</span> default vueLifecycles;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建文件vue.config.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    publicPath: <span class="string">"//localhost:3000/"</span>,</span><br><span class="line">    // css在所有环境下，都不单独打包为文件。这样是为了保证最小引入（只引入js）</span><br><span class="line">    css: &#123;</span><br><span class="line">        extract: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    configureWebpack: &#123;</span><br><span class="line">        devtool: <span class="string">'none'</span>, // 不打包sourcemap</span><br><span class="line">        output: &#123;</span><br><span class="line">            library: <span class="string">"singleVue"</span>, // 导出名称</span><br><span class="line">            libraryTarget: <span class="string">"window"</span>, //挂载目标</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: <span class="string">'./'</span>,</span><br><span class="line">        compress: <span class="literal">true</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>packjson.json 配置 vue-cli-service serve –port 3000</li>
+</ul>
+<h3 id="样式隔离-postcss-selector-namespace"><a href="#样式隔离-postcss-selector-namespace" class="headerlink" title="样式隔离 postcss-selector-namespace"></a>样式隔离 postcss-selector-namespace</h3><ul>
+<li>npm install postcss-selector-namespace –save -d</li>
+<li>index.html</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"single-spa-vue"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>项目目录下新建文件 postcss.config.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// postcss.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins: &#123;</span><br><span class="line">    // postcss-selector-namespace: 给所有css添加统一前缀，然后父项目添加命名空间</span><br><span class="line">    <span class="string">'postcss-selector-namespace'</span>: &#123;</span><br><span class="line">      namespace(css) &#123;</span><br><span class="line">        // element-ui的样式不需要添加命名空间</span><br><span class="line">        <span class="keyword">if</span> (css.includes(<span class="string">'element-variables.scss'</span>)) <span class="built_in">return</span> <span class="string">''</span>;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">'.single-spa-vue'</span> // 返回要添加的类名</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="独立运行"><a href="#独立运行" class="headerlink" title="独立运行"></a>独立运行</h3><p>single-spa 有个属性，叫做 window.singleSpaNavigate。如果为true，代表就是single-spa模式。如果false，就可以独立渲染。</p>
+<ul>
+<li><p>main.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (!window.singleSpaNavigate) &#123; // 如果不是single-spa模式</span><br><span class="line">  delete vueOptions.el;</span><br><span class="line">  new Vue(vueOptions).<span class="variable">$mount</span>(<span class="string">'#vue'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="推荐文章"><a href="#推荐文章" class="headerlink" title="推荐文章"></a>推荐文章</h2><blockquote>
+<p><a href="https://github.com/phodal/microfrontends#实施微前端的六种方式" target="_blank" rel="noopener">《前端架构：从入门到微前端》</a><br><a href="https://insights.thoughtworks.cn/micro-frontends-2/" target="_blank" rel="noopener">「微前端」- 将微服务理念扩展到前端开发（实战篇）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzAwNzExNg==&amp;mid=2650864735&amp;idx=1&amp;sn=e88f14c7fb68ab4729c65fe63519a88d&amp;chksm=f3d084bcc4a70daa7d5c1460ee88b0cd564824ab95ddd54a53a50ae0c5f7e693a37a91cfb41b&amp;mpshare=1&amp;scene=1&amp;srcid=0311rFvD4pp8xoiiGc1t8t3J&amp;sharer_sharetime=1583914678399&amp;sharer_shareid=f79d79d0d8567c8108be1ccf56d88d74%23rd" target="_blank" rel="noopener">【前端架构】微前端实战</a><br><a href="https://zhuanlan.zhihu.com/p/110881093?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=26747382792192&amp;from=timeline&amp;isappinstalled=0&amp;s_s_i=9TzqhFn1mXqEr7SCdVspzzSjNosXvEK+NXMkH+t/7VY=&amp;s_r=1" target="_blank" rel="noopener">从微前端到微后端，不可思议的前端架构思考</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzUxNzk1MjQ0Ng==&amp;mid=2247484815&amp;idx=1&amp;sn=fa4967219db3f336b5e0e2289245c6a3&amp;chksm=f991035ecee68a48e05ef203c29678567ef699e91bb3190d873e717117bced94c6b178bc9add&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1582516893873&amp;sharer_shareid=f79d79d0d8567c8108be1ccf56d88d74%23rd" target="_blank" rel="noopener">爱奇艺号微前端架构实践</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDcyMTQyNQ==&amp;mid=2649263627&amp;idx=1&amp;sn=de7cef40deef9a3a3a1364edc302833b&amp;chksm=87675ff5b010d6e3b83564f213ce1894b39f76d4e14e5f31b2155ca872422a35c465b3af6a1c&amp;mpshare=1&amp;scene=1&amp;srcid=&amp;sharer_sharetime=1582862519669&amp;sharer_shareid=f79d79d0d8567c8108be1ccf56d88d74%23rd" target="_blank" rel="noopener">Bifrost微前端框架及其在美团闪购中的实践</a><br><a href="https://juejin.im/post/5e15a8e4e51d4541216298c3" target="_blank" rel="noopener">关于微前端你必须了解的三种实现方式</a><br><a href="https://qiankun.umijs.org/zh/" target="_blank" rel="noopener">阿里的qiankun框架</a><br><a href="https://juejin.im/post/5e17f064e51d45315d648b95" target="_blank" rel="noopener">前端微服务在字节跳动的打磨与应用</a></p>
+</blockquote>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持mawencai</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2020/04/20/前端微服务（上）/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2020/04/23/前端微服务（中）/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
